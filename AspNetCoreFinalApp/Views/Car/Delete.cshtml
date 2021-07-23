@@ -1,0 +1,41 @@
+﻿@model CarModelView
+@{
+
+    ViewData["Title"] = "Успішно видалено";
+}
+
+@if (Model != null)
+{
+    <h1 class="text-center text-dark">Успішно видалено об'єкт</h1>
+
+
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Ідентифікатор</th>
+                <th scope="col">Назва</th>
+                <th scope="col">Модель</th>
+                <th scope="col">Фотографія</th>
+                <th scope="col">Рік випуску</th>
+                <th scope="col">Ціна</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">@Model.Id</td>
+                <td>@Model.Developer</td>
+                <td>@Model.Model</td>
+                <td>@Model.Image</td>
+                <td>@Model.Year</td>
+                <td>₴ @Model.Price</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="text-center"><a asp-controller="Car" asp-action="Index">Повернутися на головну</a></p>
+}
+else 
+{
+    <h1 class="text-center text-dark">Щось пішло не так :(</h1>
+    <p class="text-center">Спробуйте наступного разу. <a asp-controller="Car" asp-action="Index">На головну</a></p>
+}

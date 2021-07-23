@@ -1,0 +1,12 @@
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\bin\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.deps.json
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\bin\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.runtimeconfig.json
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\bin\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.runtimeconfig.dev.json
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\bin\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.dll
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\bin\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.pdb
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\obj\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.csprojAssemblyReference.cache
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\obj\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.AssemblyInfoInputs.cache
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\obj\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.AssemblyInfo.cs
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\obj\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\obj\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.dll
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\obj\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.pdb
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp.Domain\obj\Debug\netcoreapp3.1\AspNetCoreFinalApp.Domain.genruntimeconfig.cache

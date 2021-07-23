@@ -1,0 +1,56 @@
+﻿@model AspNetCoreFinalApp.Models.CarCreateModelView
+@{
+    ViewData["Title"] = "Створити новий автомобіль";
+}
+
+<div class="mx-auto">
+
+    <h1>Створити новий автомобіль</h1>
+
+    <h4>Новий автомобіль</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Developer" class="control-label"></label>
+                    <input asp-for="Developer" class="form-control" />
+                    <span asp-validation-for="Developer" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model" class="control-label"></label>
+                    <input asp-for="Model" class="form-control" />
+                    <span asp-validation-for="Model" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Year" class="control-label"></label>
+                    <input asp-for="Year" class="form-control" />
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Створити" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Повернутися до списку</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/imask/imask.min.js"></script>
+    <script src="~/js/CarValidation.js"></script>
+}

@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "imask@6.1.0",
+      "destination": "wwwroot/lib/imask/",
+      "files": [
+        "imask.min.js"
+      ]
+    },
+    {
+      "library": "fontawesome-iconpicker@3.2.0",
+      "destination": "wwwroot/lib/fontawesome-iconpicker/",
+      "files": [
+        "css/fontawesome-iconpicker.css",
+        "js/fontawesome-iconpicker.js"
+      ]
+    }
+  ]
+}
