@@ -76,12 +76,12 @@
     </div>
 </div>
 
-<div class="modal fade" id="failedModal">
+<div class="modal fade" data-bs-backdrop="static" id="failedModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Помилка видалення!</h4>
-                <span class="btn-close" data-target="#successModal" data-bs-dismiss="modal"></span>
+                <span class="btn-close modalClose" data-target="#successModal" data-bs-dismiss="modal"></span>
             </div>
             <div class="modal-body">
                 <p class="text-success text-danger" id="failText">На жаль при видаленні об'єкту виникла помилка!</p>
@@ -90,12 +90,12 @@
     </div>
 </div>
 
-<div class="modal fade" id="successModal">
+<div class="modal fade" data-bs-backdrop="static"  id="successModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Успішне видалення!</h4>
-                <span class="btn-close" data-target="#successModal" data-bs-dismiss="modal"></span>
+                <span class="btn-close modalClose" data-target="#successModal" data-bs-dismiss="modal"></span>
             </div>
             <div class="modal-body">
                 <p class="text-success text-center">Ваш об'єкт успішно видалено!</p>

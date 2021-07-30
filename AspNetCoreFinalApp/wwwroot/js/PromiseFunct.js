@@ -1,5 +1,8 @@
 ﻿$(function () {
     var deleteItem;
+    $(".modalClose").on("click", function () {
+        Redirect();
+    });
 
     $("[data-delete-car]").on("click", function (e) {
         e.preventDefault();
@@ -39,10 +42,8 @@
             })
             .then(() => {
                 closeModal();
-                deleteItem.closest('tr').remove();
                 openSuccessModal();
 
-                Redirect();
             })
             .catch((errorMessage) => {
                 closeModal();
