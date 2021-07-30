@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            
+
             @{int counter = 1;}
             @foreach (var item in Model)
             {
@@ -27,17 +27,19 @@
                     <td scope="row">@(counter++)</td>
                     <td>@item.Developer</td>
                     <td>@item.Model</td>
-                    <td>@item.Image</td>
+                    <td>
+                        <img src="@item.Image" alt="img" width="100" />
+                    </td>
                     <td>₴ @item.Price</td>
                     <td>@item.Year</td>
-                    <td>
-                        <div class="mx-auto w-100">
+                    <td class="align-middle">
+                        <div class="mx-auto w-100" style="font-size:22px;">
                             <p class="text-center my-auto">
-                                <a asp-controller="Car" asp-action="Edit" asp-route-id="@item.Id">
-                                    <span class="fa fa-pencil-square-o text-info fa-lg"></span>
+                                <a href="#" class="text-decoration-none">
+                                    <i class="fa fa-pencil-square-o text-info fa-lg"></i>
                                 </a>
-                                <a asp-controller="Car" asp-action="Delete" asp-route-id="@item.Id">
-                                    <span class="fa fa-trash-o text-danger fa-lg"></span>
+                                <a data-id="@item.Id" href="#" class="text-decoration-none">
+                                    <i data-delete-car class="fa fa-trash-o text-danger fa-lg"></i>
                                 </a>
                             </p>
                         </div>
@@ -51,11 +53,70 @@
     <a asp-action="Create" asp-controller="Car" class="btn btn-secondary my-2 align-content-center">Додати автомобіль</a>
 </div>
 
+<div class="ownmodal d-none" id="ownmodal">
+    <div class="lds-hourglass myloader"></div>
+</div>
+
+
+<div class="fade modal" tabindex="-1" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Видалення</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Ви дійсно бажаєте видалити об'єкт</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
+                <button type="button" class="btn btn-primary" id="btnDelete">Видалити</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="failedModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Помилка видалення!</h4>
+                <span class="btn-close" data-target="#successModal" data-bs-dismiss="modal"></span>
+            </div>
+            <div class="modal-body">
+                <p class="text-success text-danger" id="failText">На жаль при видаленні об'єкту виникла помилка!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="successModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Успішне видалення!</h4>
+                <span class="btn-close" data-target="#successModal" data-bs-dismiss="modal"></span>
+            </div>
+            <div class="modal-body">
+                <p class="text-success text-center">Ваш об'єкт успішно видалено!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts
 {
+    <script src="~/lib/axios/axios.min.js"></script>
     <script src="https://use.fontawesome.com/7e741d0dc3.js"></script>
-
     <script>
-        
+            function Redirect() {
+                $(location).attr("href", "@Url.Action("Index", "Car")");
+            }
     </script>
+    <script src="~/js/PromiseFunct.js"></script>
+}
+
+@section Styles
+{
+    <link href="~/css/CarStyles.css" rel="stylesheet" />
 }

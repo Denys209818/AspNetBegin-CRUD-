@@ -47,6 +47,7 @@ namespace AspNetCoreFinalApp
 
             services.AddTransient<IValidator<CarCreateModelView>, CarCreateValidator>();
             services.AddTransient<IValidator<CarUpdateModelView>, CarUpdateValidator>();
+            services.AddAutoMapper(typeof(MyAutoMapper));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
