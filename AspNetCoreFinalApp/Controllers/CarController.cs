@@ -3,6 +3,7 @@ using AspNetCoreFinalApp.Domain.Entities;
 using AspNetCoreFinalApp.Models;
 using AutoMapper;
 using Bogus;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -12,12 +13,12 @@ using System.Threading.Tasks;
 
 namespace AspNetCoreFinalApp.Controllers
 {
+    [Authorize]
     public class CarController : Controller
     {
         public List<CarModelView> models { get; set; }
         public EFDataContext _context { get; set; }
         private IMapper _mapper { get; set; }
-
         public CarController(EFDataContext context, IMapper mapper)
         {
             _context = context;
@@ -121,7 +122,6 @@ namespace AspNetCoreFinalApp.Controllers
                 return View();
             }
         }
-
         [HttpPost]
         public IActionResult Edit(CarUpdateModelView modal)
         {
@@ -147,38 +147,6 @@ namespace AspNetCoreFinalApp.Controllers
                 return View();
             }
         }
-
-        //[HttpGet]
-        //public IActionResult Delete(int id = -1) 
-        //{
-        //    try
-        //    {
-        //        if (id != -1)
-        //        {
-        //            var car = _context.Cars.FirstOrDefault(x => x.Id == id);
-        //            if (car != null)
-        //            {
-        //                _context.Cars.Remove(car);
-        //                _context.SaveChanges();
-        //                return View(new CarModelView
-        //                {
-        //                    Id = car.Id,
-        //                    Developer = car.Developer,
-        //                    Model = car.Model,
-        //                    Price = car.Price,
-        //                    Image = car.Image,
-        //                    Year = car.Year
-        //                });
-        //            }
-        //        }
-        //        return View();
-        //    }
-        //    catch 
-        //    {
-        //        return View();
-        //    }
-        //}
-
         [HttpPost]
         public IActionResult Delete(int id) 
         {
@@ -198,7 +166,6 @@ namespace AspNetCoreFinalApp.Controllers
                 return BadRequest();
             }
         }
-
         public List<CarModelView> GetCars() 
         {
             try
@@ -222,7 +189,6 @@ namespace AspNetCoreFinalApp.Controllers
                 return null;
             }
         }
-
         private void CreateCars() 
         {
             Faker<AppCar> faker = new Faker<AppCar>("uk")

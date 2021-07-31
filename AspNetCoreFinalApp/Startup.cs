@@ -3,6 +3,7 @@ using AspNetCoreFinalApp.Domain.Entities.Identities;
 using AspNetCoreFinalApp.Models;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,24 +31,35 @@ namespace AspNetCoreFinalApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews()
-                .AddFluentValidation();
 
-            services.AddDbContext<EFDataContext>((DbContextOptionsBuilder builder) => {
+
+            services.AddDbContext<EFDataContext>((DbContextOptionsBuilder builder) =>
+            {
                 builder.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddIdentity<AppUser, AppRole>((IdentityOptions opt) => {
-                opt.Password.RequireDigit = false;
-                opt.Password.RequiredLength = 5;
-                opt.Password.RequireLowercase = false;
-                opt.Password.RequireNonAlphanumeric = false;
-                opt.Password.RequireUppercase = false;
-            }).AddEntityFrameworkStores<EFDataContext>().AddDefaultTokenProviders();
+            //services.AddIdentity<AppUser, AppRole>((IdentityOptions opt) =>
+            //{
+            //    opt.Password.RequireDigit = false;
+            //    opt.Password.RequiredLength = 5;
+            //    opt.Password.RequireLowercase = false;
+            //    opt.Password.RequireNonAlphanumeric = false;
+            //    opt.Password.RequireUppercase = false;
+            //}).AddEntityFrameworkStores<EFDataContext>().AddDefaultTokenProviders();
 
             services.AddTransient<IValidator<CarCreateModelView>, CarCreateValidator>();
             services.AddTransient<IValidator<CarUpdateModelView>, CarUpdateValidator>();
+            services.AddTransient<IValidator<AuthViewModal>, AuthValidator>();
             services.AddAutoMapper(typeof(MyAutoMapper));
+
+            services.AddAuthentication("Cookie")
+                .AddCookie("Cookie", (CookieAuthenticationOptions opt) => {
+                    opt.LoginPath = "/Auth/Login";
+                });
+            services.AddAuthorization();
+            services.AddControllersWithViews()
+                .AddFluentValidation();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,12 +75,13 @@ namespace AspNetCoreFinalApp
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {

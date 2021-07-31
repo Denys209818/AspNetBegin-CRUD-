@@ -197,3 +197,4 @@ C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Be
 C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp\bin\Debug\netcoreapp3.1\Bogus.dll
 C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp\obj\Debug\netcoreapp3.1\Razor\Views\Test\Index.cshtml.g.cs
+C:\Users\Denis\Desktop\ASP.NET Core MVC\Lessons\Lesson 1. ASP .NET Core (MVC) Begin\AspNetCoreFinalApp\AspNetCoreFinalApp\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Login.cshtml.g.cs

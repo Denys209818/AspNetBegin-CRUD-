@@ -1,0 +1,27 @@
+﻿@model AuthViewModal
+    <div class="container w-50">
+        <form id="mainForm" method="post" asp-controller="Auth" asp-action="Login">
+            <input hidden asp-for="ReturnUrl" />
+            <div class="form-group my-2">
+                <h4><label asp-for="Login"></label></h4>
+                <input type="text" asp-for="Login" class="form-control" id="txtLogin" />
+                <label for="txtLogin">Ведіть логін</label><br />
+                <span class="text-danger" asp-validation-for="Login"></span>
+            </div>
+            <div class="form-group my-2">
+                <h4><label asp-for="Password"></label></h4>
+                <input type="text" asp-for="Password" class="form-control" id="txtPassword" />
+                <label for="txtPassword">Ведіть пароль</label><br />
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+            <a class="btn btn-outline-success btn-block" id="btnSend">Авторизуватися</a>
+        </form>
+    </div>
+
+
+@section Scripts {
+
+    <script>
+        $("#btnSend").on("click", () => { $("#mainForm").submit(); });
+    </script>
+}
